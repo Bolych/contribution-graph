@@ -66,7 +66,7 @@ const TableComponent = () => {
 
     const calculateMonthSpan = () => {
         const spanData = {};
-        tableData.forEach((week, i) => {
+        tableData.forEach((week) => {
             const month = week[0].date.slice(0, 7);
             if (!spanData[month]) {
                 spanData[month] = 0;
@@ -119,7 +119,7 @@ const TableComponent = () => {
                 <thead>
                 <tr>
                     <th></th>
-                    {Object.keys(monthSpan).map((month, index) => (
+                    {Object.keys(monthSpan).map((month) => (
                         <th
                             key={month}
                             colSpan={monthSpan[month]}
@@ -145,6 +145,7 @@ const TableComponent = () => {
                                     title={column[rowIndex].date}
                                     style={{
                                         backgroundColor,
+                                        minWidth: '15px',
                                         width: '15px',
                                         height: '15px',
                                         lineHeight: '15px',
